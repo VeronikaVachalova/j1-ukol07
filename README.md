@@ -1,19 +1,18 @@
 # Úkol 7 – Výběr oblíbené barvy
-
 Naprogramujte aplikaci, ve které uživatel zadá svou přezdívku a vybere si oblíbenou barvu.
 
 ## Zadání
 Vytvořte javabeanu `PreferenceBean`, ve kterém bude uložena přezdívka (`String`) a oblíbená barva. Pro seznam barev si vytvořte nový enum,
-pojmenujte jej třeba `Barva`. Protože beanu použijeme jako model pro Swing, musí settery *odpalovat* události při změně
+pojmenujte jej třeba `Barva`. Protože beanu použijeme jako cz.czechitas.ukol7.model pro Swing, musí settery *odpalovat* události při změně
 properties. Ideální je, když taková beany implementuje rozhraní `ObservableBean`, pro implementaci potřebných metod se hodí
 třída `ExtendedPropertyChangeSupport`.
 
-Dále vytvořte controller `PreferenceController`, který v sobě bude mít model (reprezentovaný třídou `PresentationModel`), model v sobě bude mít
+Dále vytvořte cz.czechitas.ukol7.formbuilder.cz.czechitas.ukol7.controller `PreferenceController`, který v sobě bude mít cz.czechitas.ukol7.model (reprezentovaný třídou `PresentationModel`), cz.czechitas.ukol7.model v sobě bude mít
 instanci `PreferenceBean`. Dále v sobě bude mít `Action`, která bude sloužit pro uložení preferencí. Text akce bude
 „Uložit“, při provedení akce se do konzole vypíše přezdívka uživatele a jím vybraná barva. Akce bude dostupná jen tehdy,
 když bude zadaná přezdívka a vybraná barva.
 
-Nakonec vytvořte view `HlavniOkno` – formulář (odděděný z `JFrame`). Oknu nastavte titulek, použijte layout manager
+Nakonec vytvořte cz.czechitas.ukol7.view `HlavniOkno` – formulář (odděděný z `JFrame`). Oknu nastavte titulek, použijte layout manager
 `MigLayout` a nastavte dvousloupcový layout. Do formuláře vložte na jednom řádku label „Přezdívka“ a `textField` propojený
 na property `prezdivka`. Dále vložte na řádky pod sebe radiobuttony pro jednotlivé barvy. Radiobuttony vždy roztáhněte
 přes celý řádek (přes oba sloupce layoutu). Jednotlivé radiouttony vložíte ručně (nebude se používat cyklus), pro
